@@ -1,30 +1,68 @@
-# Jordan Cowan - Portfolio
+# Jordan Cowan - Professional Portfolio
 
-A modern, responsive portfolio website showcasing my journey as a Software Engineer and AI Enthusiast.
+Modern, high-performance portfolio website built with React 18 and TypeScript, featuring advanced animations and responsive design patterns.
 
-## About
+## Professional Profile
 
-Recent Software Engineering graduate from the University of Victoria with specializations in:
-- **Data Mining and Analysis, AI, and ML**
-- **Visual Computing and Graphics**
+Software Engineering graduate from the University of Victoria with specialized expertise in:
 
-Passionate about leveraging AI in cloud computing to improve existing systems and create innovative solutions.
+1. **Data Mining and Analysis**
+   - Machine Learning algorithms and implementation
+   - Statistical analysis and data visualization
+   - Predictive modeling and pattern recognition
 
-## Tech Stack
+2. **Artificial Intelligence**
+   - Neural network architectures
+   - Natural language processing
+   - Computer vision applications
 
-- **Frontend**: React 18 + TypeScript
-- **Styling**: Tailwind CSS with custom animations
-- **Build Tool**: Vite
-- **Deployment**: Netlify + DigitalOcean ready
+3. **Visual Computing and Graphics**
+   - 3D rendering and animation
+   - Computer graphics algorithms
+   - Interactive visualization systems
 
-## Features
+## Technical Architecture
 
-- ✨ Interactive particle background animation
-- 🎯 Smooth scroll animations and parallax effects
-- 📱 Fully responsive design
-- 🚀 Optimized performance with Vite
-- 💼 Project showcase with GitHub integration
-- 📧 Contact form ready for integration
+### Core Technologies
+
+- **Frontend Framework**: React 18.3 with TypeScript 5.x
+- **Styling Engine**: Tailwind CSS 3.x with custom utility classes
+- **Build System**: Vite 5.x for optimized bundling and development
+- **Code Quality**: ESLint with TypeScript-aware rules and Biome formatter
+
+### Performance Features
+
+- **Deployment Platforms**: Netlify with DigitalOcean integration support
+- **Asset Optimization**: Automatic code splitting and lazy loading
+- **SEO Optimization**: Meta tags and semantic HTML structure
+- **Accessibility**: WCAG 2.1 AA compliance standards
+
+### Interactive Components
+
+1. **Particle Animation System**
+   - WebGL-accelerated particle rendering
+   - Dynamic interaction with mouse movement
+   - Optimized performance with requestAnimationFrame
+
+2. **Advanced Scroll Effects**
+   - Parallax scrolling with hardware acceleration
+   - Smooth interpolation algorithms
+   - Viewport-aware animation triggers
+
+3. **Responsive Design Architecture**
+   - Mobile-first development approach
+   - Breakpoint-specific component variants
+   - Touch-optimized interaction patterns
+
+4. **Project Portfolio Integration**
+   - GitHub API integration for live project data
+   - Automated deployment status tracking
+   - Technology stack visualization
+
+5. **Professional Contact System**
+   - Form validation with real-time feedback
+   - Email service integration ready
+   - Professional inquiry routing
 
 ## Expanding the ESLint configuration
 
