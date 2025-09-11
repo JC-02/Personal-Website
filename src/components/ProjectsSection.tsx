@@ -10,21 +10,21 @@ const ProjectsSection: React.FC = () => {
       tech: 'Python, TensorFlow, AWS',
       description: 'Developed a machine learning pipeline for analyzing large datasets, implementing advanced data mining techniques and visualization tools. The system processes complex data patterns and provides actionable insights through an intuitive interface.',
       link: '#',
-      github: 'https://github.com/jcowan'
+      github: 'https://github.com/JC-02'
     },
     {
       title: 'Real-time Graphics Rendering Engine',
       tech: 'C++, OpenGL, GLSL',
       description: 'Built a high-performance graphics rendering engine with advanced visual computing techniques. Features include real-time lighting, particle systems, and procedural content generation for immersive visual experiences.',
       link: '#',
-      github: 'https://github.com/jcowan'
+      github: 'https://github.com/JC-02'
     },
     {
       title: 'Cloud-Based ML Model Deployment',
       tech: 'Docker, Kubernetes, Python',
       description: 'Created a scalable cloud infrastructure for deploying and managing machine learning models. The system automatically scales based on demand and provides real-time model inference with monitoring and analytics.',
       link: '#',
-      github: 'https://github.com/jcowan'
+      github: 'https://github.com/JC-02'
     },
   ];
 

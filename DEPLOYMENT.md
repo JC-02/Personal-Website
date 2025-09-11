@@ -11,10 +11,8 @@
 
 #### 1. GitHub Setup
 ```bash
-# If you haven't already, push to GitHub:
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-git branch -M main
-git push -u origin main
+# Repository already pushed to:
+# https://github.com/JC-02/Personal-Website
 ```
 
 #### 2. DigitalOcean App Platform

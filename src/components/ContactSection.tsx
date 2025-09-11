@@ -39,10 +39,12 @@ const ContactSection: React.FC = () => {
         }`}>
           <p className="text-gray-400 mb-4">Let's connect! I'd love to hear about opportunities or just chat about technology:</p>
           <a
-            href="mailto:jordan.cowan@example.com"
+            href="https://github.com/JC-02"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-white text-xl hover:text-gray-300 transition-colors duration-300"
           >
-            jordan.cowan@example.com
+            GitHub: JC-02
           </a>
         </div>
 

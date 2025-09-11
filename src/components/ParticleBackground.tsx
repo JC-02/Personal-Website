@@ -239,7 +239,7 @@ const ParticleBackground: React.FC = () => {
     }
 
     animationRef.current = requestAnimationFrame(animate);
-  }, [updateParticle, drawParticle, drawConnection, CONNECTION_DISTANCE, isMobile]);
+  }, [updateParticle, drawParticle, CONNECTION_DISTANCE, isMobile]);
 
   const handleMouseMove = useCallback((event: MouseEvent) => {
     const canvas = canvasRef.current;
@@ -306,7 +306,7 @@ const ParticleBackground: React.FC = () => {
             }
           }
         } catch (e) {
-          continue;
+          // Element detection failed, skip this particle
         }
       }
       
