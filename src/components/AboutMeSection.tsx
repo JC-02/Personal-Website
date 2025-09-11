@@ -1,7 +1,7 @@
 import type React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
-const AboutSection: React.FC = () => {
+const AboutMeSection: React.FC = () => {
   const { ref, isVisible } = useScrollAnimation(0.1);
 
   return (
@@ -42,4 +42,4 @@ const AboutSection: React.FC = () => {
   );
 };
 
-export default AboutSection;
+export default AboutMeSection;

@@ -6,22 +6,25 @@ const ProjectsSection: React.FC = () => {
 
   const projects = [
     {
-      title: 'BC Parks Reservation Services (BCPRS)',
-      client: 'BC Parks',
-      description: 'We built the day-use pass and attendance and revenue tracking systems for BC Parks. Using the Government of Canada\'s instance of AWS, these systems were part of a new initiative for The BC Government to adopt public cloud infrastructure.',
-      link: 'https://reserve.bcparks.ca/dayuse/',
+      title: 'AI-Powered Data Analysis Platform',
+      tech: 'Python, TensorFlow, AWS',
+      description: 'Developed a machine learning pipeline for analyzing large datasets, implementing advanced data mining techniques and visualization tools. The system processes complex data patterns and provides actionable insights through an intuitive interface.',
+      link: '#',
+      github: 'https://github.com/jcowan'
     },
     {
-      title: 'Natural Resources Public Transparency Initiative (NRPTI)',
-      client: 'Natural Resource Sector',
-      description: 'We created a centralized data system for administrators from various Ministries and business areas to share information. This data system provides dynamic information to several front-end applications we developed, including the BC Mine Information Website.',
-      link: 'https://mines.nrs.gov.bc.ca/',
+      title: 'Real-time Graphics Rendering Engine',
+      tech: 'C++, OpenGL, GLSL',
+      description: 'Built a high-performance graphics rendering engine with advanced visual computing techniques. Features include real-time lighting, particle systems, and procedural content generation for immersive visual experiences.',
+      link: '#',
+      github: 'https://github.com/jcowan'
     },
     {
-      title: 'EAGLE (EPIC modernization)',
-      client: 'Environmental assessment office (EAO)',
-      description: 'We took on the modernization of EPIC, which included major updates to architecture, security and the user interface. Working closely with the EAO, we were able to greatly increase the efficiency and speed of both the administrative and public sites through data cleanup and sanitization.',
-      link: 'https://projects.eao.gov.bc.ca/',
+      title: 'Cloud-Based ML Model Deployment',
+      tech: 'Docker, Kubernetes, Python',
+      description: 'Created a scalable cloud infrastructure for deploying and managing machine learning models. The system automatically scales based on demand and provides real-time model inference with monitoring and analytics.',
+      link: '#',
+      github: 'https://github.com/jcowan'
     },
   ];
 
@@ -41,7 +44,7 @@ const ProjectsSection: React.FC = () => {
             ? 'opacity-100 translate-y-0'
             : 'opacity-0 translate-y-8'
         }`}>
-          OUR PROJECTS
+          MY PROJECTS
         </h2>
         <div className="space-y-16">
           {projects.map((project, index) => (
@@ -59,18 +62,30 @@ const ProjectsSection: React.FC = () => {
               <h3 className="text-xl font-semibold mb-2 text-gray-300 group-hover:text-white transition-colors duration-300">
                 {project.title}
               </h3>
-              <p className="text-gray-400 font-medium mb-4">{project.client}</p>
+              <p className="text-gray-400 font-medium mb-4">{project.tech}</p>
               <p className="text-gray-400 leading-relaxed mb-6">
                 {project.description}
               </p>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block text-white border border-white px-6 py-2 hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105"
-              >
-                visit site
-              </a>
+              <div className="flex gap-4">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block text-white border border-white/30 backdrop-blur-sm bg-white/10 px-6 py-2 hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 shadow-lg"
+                >
+                  View Code
+                </a>
+                {project.link !== '#' && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block text-gray-300 border border-gray-300/30 backdrop-blur-sm bg-gray-300/10 px-6 py-2 hover:bg-gray-300 hover:text-black transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
+                    Live Demo
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </div>

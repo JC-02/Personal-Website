@@ -29,27 +29,27 @@ const HeroSection: React.FC = () => {
       >
         <div className="relative overflow-hidden">
           <div className="flex items-center justify-center">
-            {/* Digital Block */}
+            {/* Jordan Block */}
             <div
-              className="bg-white text-black px-8 py-4 transition-transform duration-300 ease-out"
+              className="bg-white text-black px-8 py-4 transition-transform duration-300 ease-out shadow-lg"
               style={{
                 transform: `translateX(-${parallaxOffset}px) rotate(-${parallaxOffset * 0.1}deg)`,
               }}
             >
               <h1 className="text-4xl md:text-6xl font-bold tracking-wider">
-                DIGITAL
+                JORDAN
               </h1>
             </div>
 
-            {/* Space Block */}
+            {/* Cowan Block */}
             <div
-              className="bg-black text-white px-8 py-4 ml-2 transition-transform duration-300 ease-out"
+              className="bg-black text-white px-8 py-4 ml-2 transition-transform duration-300 ease-out shadow-lg"
               style={{
                 transform: `translateX(${parallaxOffset}px) rotate(${parallaxOffset * 0.1}deg)`,
               }}
             >
               <h1 className="text-4xl md:text-6xl font-bold tracking-wider">
-                SPACE
+                COWAN
               </h1>
             </div>
           </div>
@@ -65,16 +65,14 @@ const HeroSection: React.FC = () => {
           />
         </div>
 
-        {/* Subtitle that fades in as logo separates */}
-        <div
-          className="mt-8 transition-all duration-500 ease-out"
-          style={{
-            opacity: Math.min(1, scrollY / 200),
-            transform: `translateY(${20 - scrollY * 0.1}px)`,
-          }}
-        >
-          <p className="text-white text-lg md:text-xl tracking-wide">
-            Software Engineering Solutions
+        {/* Subtitle that's always visible */}
+        <div className="mt-8">
+          <p className="text-white text-lg md:text-xl tracking-wide mb-4">
+            Software Engineer & AI Enthusiast
+          </p>
+          <p className="text-gray-300 text-sm md:text-base max-w-2xl mx-auto">
+            Welcome! I'm passionate about AI, cloud computing, and building systems that make a difference. 
+            Let's create something amazing together.
           </p>
         </div>
       </div>

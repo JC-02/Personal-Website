@@ -1,5 +1,5 @@
 # DigitalOcean App Platform Configuration
-name: digitalspace-portfolio
+name: jordan-cowan-portfolio
 services:
 - name: web
   source_dir: /

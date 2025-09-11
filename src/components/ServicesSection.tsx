@@ -1,31 +1,31 @@
 import type React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
-const ServicesSection: React.FC = () => {
+const AboutSection: React.FC = () => {
   const { ref, isVisible } = useScrollAnimation(0.1);
 
-  const services = [
+  const skills = [
     {
-      title: 'Strategic Planning and Technology Selection',
-      description: 'Process digitalization, workflow management, system architecture and scaling, sharing of information and security.',
+      title: 'Artificial Intelligence & Machine Learning',
+      description: 'Passionate about AI/ML applications, data mining, and analysis. Experienced with modern frameworks and cloud-based AI solutions.',
     },
     {
-      title: 'Software Development',
-      description: 'High performance, cross-functional, and technological excellence able to tackle anything.',
+      title: 'Software Engineering',
+      description: 'Strong foundation in software development with expertise in building scalable, maintainable systems using best practices.',
     },
     {
-      title: 'Mobile Development',
-      description: 'Native iOS and Android development or progressive web apps that cut costs and development time dramatically.',
+      title: 'Visual Computing & Graphics',
+      description: 'Specialized knowledge in visual computing, computer graphics, and creating engaging visual experiences.',
     },
     {
-      title: 'UI/UX Design',
-      description: 'We make discoverability fun for your users. Customer experience is our number one focus.',
+      title: 'Cloud Computing',
+      description: 'Enthusiastic about cloud technologies and their intersection with AI to build innovative, efficient systems.',
     },
   ];
 
   return (
     <section
-      id="services"
+      id="about"
       ref={ref as React.RefObject<HTMLElement>}
       className={`py-20 px-6 relative z-10 transition-all duration-1000 ease-out ${
         isVisible
@@ -39,26 +39,43 @@ const ServicesSection: React.FC = () => {
             ? 'opacity-100 translate-y-0'
             : 'opacity-0 translate-y-8'
         }`}>
-          WHAT WE DO
+          ABOUT ME
         </h2>
+        
+        <div className={`mb-16 text-center transition-all duration-1000 ease-out delay-400 ${
+          isVisible
+            ? 'opacity-100 translate-y-0'
+            : 'opacity-0 translate-y-8'
+        }`}>
+          <p className="text-gray-300 text-lg leading-relaxed mb-6">
+            Hi! I'm Jordan Cowan, a Software Engineer who recently graduated from the University of Victoria 
+            with specializations in <strong className="text-white">Data Mining and Analysis, AI, and ML</strong> as well as 
+            <strong className="text-white"> Visual Computing and Graphics</strong>.
+          </p>
+          <p className="text-gray-300 text-lg leading-relaxed">
+            I'm passionate about leveraging AI in cloud computing to improve existing systems and create innovative solutions. 
+            I love working with companies that are pushing the boundaries of what's possible with technology.
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {services.map((service, index) => (
+          {skills.map((skill, index) => (
             <div
-              key={service.title}
+              key={skill.title}
               className={`text-white transition-all duration-1000 ease-out ${
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-12'
               }`}
               style={{
-                transitionDelay: `${400 + index * 200}ms`
+                transitionDelay: `${600 + index * 200}ms`
               }}
             >
               <h3 className="text-xl font-semibold mb-4 text-gray-300 hover:text-white transition-colors duration-300">
-                {service.title}
+                {skill.title}
               </h3>
               <p className="text-gray-400 leading-relaxed">
-                {service.description}
+                {skill.description}
               </p>
             </div>
           ))}
@@ -68,4 +85,4 @@ const ServicesSection: React.FC = () => {
   );
 };
 
-export default ServicesSection;
+export default AboutSection;

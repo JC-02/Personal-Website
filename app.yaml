@@ -1,0 +1,22 @@
+# DigitalOcean App Platform Configuration
+# Place this in your repository root as .do/app.yaml
+
+spec:
+  name: jordan-cowan-portfolio
+  static_sites:
+  - name: frontend
+    source_dir: /
+    github:
+      repo: your-username/portfolio-repo-name
+      branch: main
+    build_command: npm run build
+    output_dir: /dist
+    index_document: index.html
+    error_document: index.html
+    routes:
+    - path: /
+  domains:
+  - domain: yourdomain.com
+    type: PRIMARY
+  - domain: www.yourdomain.com  
+    type: ALIAS

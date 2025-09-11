@@ -1,11 +1,30 @@
-# React + TypeScript + Vite
+# Jordan Cowan - Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website showcasing my journey as a Software Engineer and AI Enthusiast.
 
-Currently, two official plugins are available:
+## About
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Recent Software Engineering graduate from the University of Victoria with specializations in:
+- **Data Mining and Analysis, AI, and ML**
+- **Visual Computing and Graphics**
+
+Passionate about leveraging AI in cloud computing to improve existing systems and create innovative solutions.
+
+## Tech Stack
+
+- **Frontend**: React 18 + TypeScript
+- **Styling**: Tailwind CSS with custom animations
+- **Build Tool**: Vite
+- **Deployment**: Netlify + DigitalOcean ready
+
+## Features
+
+- ✨ Interactive particle background animation
+- 🎯 Smooth scroll animations and parallax effects
+- 📱 Fully responsive design
+- 🚀 Optimized performance with Vite
+- 💼 Project showcase with GitHub integration
+- 📧 Contact form ready for integration
 
 ## Expanding the ESLint configuration
 

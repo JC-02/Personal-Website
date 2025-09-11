@@ -100,7 +100,7 @@ const ContactForm: React.FC = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className={`w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-white/50 transition-colors duration-300 ${
+              className={`w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all duration-300 shadow-lg ${
                 errors.name ? 'border-red-400' : ''
               }`}
               placeholder="Your name"
@@ -120,7 +120,7 @@ const ContactForm: React.FC = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className={`w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-white/50 transition-colors duration-300 ${
+              className={`w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all duration-300 shadow-lg ${
                 errors.email ? 'border-red-400' : ''
               }`}
               placeholder="your@email.com"
@@ -141,7 +141,7 @@ const ContactForm: React.FC = () => {
             name="company"
             value={formData.company}
             onChange={handleChange}
-            className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-white/50 transition-colors duration-300"
+            className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all duration-300 shadow-lg"
             placeholder="Your company (optional)"
           />
         </div>
@@ -156,7 +156,7 @@ const ContactForm: React.FC = () => {
             value={formData.message}
             onChange={handleChange}
             rows={6}
-            className={`w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-white/50 transition-colors duration-300 resize-vertical ${
+            className={`w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all duration-300 resize-vertical shadow-lg ${
               errors.message ? 'border-red-400' : ''
             }`}
             placeholder="Tell us about your project..."
@@ -169,13 +169,13 @@ const ContactForm: React.FC = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full md:w-auto px-8 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+          className="w-full md:w-auto px-8 py-3 bg-white text-black font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none shadow-lg"
         >
           {isSubmitting ? 'Sending...' : 'Send Message'}
         </button>
 
         {submitStatus === 'success' && (
-          <div className="p-4 bg-green-500/20 border border-green-500/50 rounded-lg">
+          <div className="p-4 bg-green-500/20 backdrop-blur-sm border border-green-500/50 shadow-lg">
             <p className="text-green-400">
               Thank you! Your message has been sent successfully. We'll get back to you soon.
             </p>
@@ -183,7 +183,7 @@ const ContactForm: React.FC = () => {
         )}
 
         {submitStatus === 'error' && (
-          <div className="p-4 bg-red-500/20 border border-red-500/50 rounded-lg">
+          <div className="p-4 bg-red-500/20 backdrop-blur-sm border border-red-500/50 shadow-lg">
             <p className="text-red-400">
               Sorry, there was an error sending your message. Please try again or contact us directly.
             </p>
