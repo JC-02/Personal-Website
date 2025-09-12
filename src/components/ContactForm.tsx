@@ -1,10 +1,11 @@
 import type React from 'react';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 interface FormData {
   name: string;
   email: string;
-  company: string;
+  organization: string;
   message: string;
 }
 
@@ -15,12 +16,23 @@ interface FormErrors {
 }
 
 const ContactForm: React.FC = () => {
+  const form = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
-    company: '',
+    organization: '',
     message: '',
   });
+
+  // Initialize EmailJS
+  useEffect(() => {
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    if (publicKey) {
+      emailjs.init({
+        publicKey: publicKey,
+      });
+    }
+  }, []);
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -60,11 +72,23 @@ const ContactForm: React.FC = () => {
     setSubmitStatus('idle');
 
     try {
-      // TODO: Replace with actual API call to your backend or email service
-      // await fetch('/api/contact', { method: 'POST', body: JSON.stringify(formData) });
+      // EmailJS configuration from environment variables
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error('EmailJS configuration missing');
+      }
+
+      if (!form.current) {
+        throw new Error('Form reference not available');
+      }
+
+      await emailjs.sendForm(serviceId, templateId, form.current);
       
       setSubmitStatus('success');
-      setFormData({ name: '', email: '', company: '', message: '' });
+      setFormData({ name: '', email: '', organization: '', message: '' });
     } catch (error) {
       setSubmitStatus('error');
     } finally {
@@ -84,7 +108,7 @@ const ContactForm: React.FC = () => {
 
   return (
     <div className="max-w-2xl mx-auto">
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form ref={form} onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label htmlFor="name" className="block text-white text-sm font-medium mb-2">
@@ -100,6 +124,7 @@ const ContactForm: React.FC = () => {
                 errors.name ? 'border-red-400' : ''
               }`}
               placeholder="Your name"
+              required
             />
             {errors.name && (
               <p className="mt-1 text-red-400 text-sm">{errors.name}</p>
@@ -120,6 +145,7 @@ const ContactForm: React.FC = () => {
                 errors.email ? 'border-red-400' : ''
               }`}
               placeholder="your@email.com"
+              required
             />
             {errors.email && (
               <p className="mt-1 text-red-400 text-sm">{errors.email}</p>
@@ -128,17 +154,17 @@ const ContactForm: React.FC = () => {
         </div>
 
         <div>
-          <label htmlFor="company" className="block text-white text-sm font-medium mb-2">
-            Company
+          <label htmlFor="organization" className="block text-white text-sm font-medium mb-2">
+            Organization
           </label>
           <input
             type="text"
-            id="company"
-            name="company"
-            value={formData.company}
+            id="organization"
+            name="organization"
+            value={formData.organization}
             onChange={handleChange}
             className="w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all duration-300 shadow-lg"
-            placeholder="Your company (optional)"
+            placeholder="Your organization (optional)"
           />
         </div>
 
@@ -155,7 +181,8 @@ const ContactForm: React.FC = () => {
             className={`w-full px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-white/50 focus:bg-white/15 transition-all duration-300 resize-vertical shadow-lg ${
               errors.message ? 'border-red-400' : ''
             }`}
-            placeholder="Tell us about your project..."
+            placeholder="What's on your mind? Share your thoughts, ideas, or just say hello..."
+            required
           />
           {errors.message && (
             <p className="mt-1 text-red-400 text-sm">{errors.message}</p>
