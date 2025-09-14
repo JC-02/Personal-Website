@@ -15,7 +15,7 @@ const AboutSection: React.FC = () => {
       }`}
     >
       <div className="container mx-auto max-w-4xl">
-        <h2 className={`text-white text-4xl md:text-5xl font-bold mb-16 text-center transition-all duration-1000 ease-out delay-200 ${
+        <h2 className={`text-white text-4xl md:text-5xl font-semibold mb-16 text-center transition-all duration-1000 ease-out delay-200 ${
           isVisible
             ? 'opacity-100 translate-y-0'
             : 'opacity-0 translate-y-8'
@@ -28,11 +28,11 @@ const AboutSection: React.FC = () => {
             ? 'opacity-100 translate-y-0'
             : 'opacity-0 translate-y-8'
         }`}>
-          <div className="bg-white/10 backdrop-blur-md p-6 border border-white/20 shadow-lg">
-            <p className="text-gray-400 leading-relaxed mb-4">
+          <div className="bg-white/10 backdrop-blur-md p-8 border border-white/20 shadow-lg">
+            <p className="text-gray-300 leading-relaxed mb-6 font-normal text-lg">
               Welcome to my portfolio! This section will contain a personal introduction and overview of who I am as a person and professional.
             </p>
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-gray-300 leading-relaxed font-normal text-lg">
               Coming soon - a detailed about me section with personal background, interests, and what drives my passion for technology.
             </p>
           </div>

@@ -39,7 +39,7 @@ const ProjectsSection: React.FC = () => {
       }`}
     >
       <div className="container mx-auto max-w-4xl">
-        <h2 className={`text-white text-4xl md:text-5xl font-bold mb-16 text-center transition-all duration-1000 ease-out delay-200 ${
+        <h2 className={`text-white text-4xl md:text-5xl font-semibold mb-16 text-center transition-all duration-1000 ease-out delay-200 ${
           isVisible
             ? 'opacity-100 translate-y-0'
             : 'opacity-0 translate-y-8'
@@ -50,7 +50,7 @@ const ProjectsSection: React.FC = () => {
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className={`text-white transition-all duration-1000 ease-out group ${
+              className={`text-white transition-all duration-1000 ease-out group bg-white/10 backdrop-blur-md p-6 border border-white/20 shadow-lg hover:bg-white/15 hover:border-white/30 ${
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-12'
@@ -59,11 +59,11 @@ const ProjectsSection: React.FC = () => {
                 transitionDelay: `${400 + index * 300}ms`
               }}
             >
-              <h3 className="text-xl font-semibold mb-2 text-gray-300 group-hover:text-white transition-colors duration-300">
+              <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-gray-100 transition-colors duration-300">
                 {project.title}
               </h3>
-              <p className="text-gray-400 font-medium mb-4">{project.tech}</p>
-              <p className="text-gray-400 leading-relaxed mb-6">
+              <p className="text-gray-300 font-medium mb-4 text-sm uppercase tracking-wider italic">{project.tech}</p>
+              <p className="text-gray-300 leading-relaxed mb-6 font-normal flex-grow">
                 {project.description}
               </p>
               <div className="flex gap-4">

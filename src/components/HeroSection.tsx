@@ -50,7 +50,7 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <section className="flex items-center justify-center min-h-screen relative z-10 py-32">
+    <section className="min-h-[75vh] flex flex-col items-center justify-center relative z-10 py-32">
       <div
         className="fixed top-20 right-4 transition-all duration-500 ease-out"
         style={{
@@ -142,14 +142,28 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-16">
-          <p className="text-white text-2xl md:text-4xl tracking-wide mb-8">
+        <div className="flex flex-col items-center gap-6 mt-16">
+          <p className="text-white text-2xl md:text-4xl tracking-wide font-semibold text-center">
             Software Engineer & AI Enthusiast
           </p>
-          <p className="text-gray-300 text-lg md:text-2xl max-w-2xl mx-auto">
+          <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto text-center leading-relaxed">
             Specializing in AI, cloud computing, and scalable system architecture. 
             Building innovative solutions that drive technological advancement.
           </p>
+          <div className="flex flex-col sm:flex-row gap-4 mt-8">
+            <a
+              href="#projects"
+              className="px-8 py-3 bg-white text-black font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-lg text-center"
+            >
+              View My Work
+            </a>
+            <a
+              href="#contact"
+              className="px-8 py-3 border border-white text-white font-semibold hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 shadow-lg text-center"
+            >
+              Get In Touch
+            </a>
+          </div>
         </div>
       </div>
     </section>

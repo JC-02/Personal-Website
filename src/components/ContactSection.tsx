@@ -16,7 +16,7 @@ const ContactSection: React.FC = () => {
       }`}
     >
       <div className="container mx-auto max-w-4xl">
-        <h2 className={`text-white text-4xl md:text-5xl font-bold mb-8 text-center transition-all duration-1000 ease-out delay-200 ${
+        <h2 className={`text-white text-4xl md:text-5xl font-semibold mb-8 text-center transition-all duration-1000 ease-out delay-200 ${
           isVisible
             ? 'opacity-100 translate-y-0'
             : 'opacity-0 translate-y-8'
@@ -29,7 +29,7 @@ const ContactSection: React.FC = () => {
             ? 'opacity-100 translate-y-0'
             : 'opacity-0 translate-y-8'
         }`}>
-          <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto font-normal leading-relaxed">
             Want to chat? Send me a message and I'll connect with you! I'd love to hear about new projects or talk about software, technology, or anything that sparks your curiosity.
           </p>
         </div>
@@ -47,12 +47,12 @@ const ContactSection: React.FC = () => {
             ? 'opacity-100 translate-y-0'
             : 'opacity-0 translate-y-8'
         }`}>
-          <p className="text-gray-400 mb-4">You can also find me on:</p>
+          <p className="text-gray-300 mb-4 font-normal">You can also find me on:</p>
           <a
             href="https://github.com/JC-02"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white text-xl hover:text-gray-300 transition-colors duration-300"
+            className="text-white text-xl hover:text-gray-300 transition-colors duration-300 font-medium"
           >
             GitHub: JC-02
           </a>
