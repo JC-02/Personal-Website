@@ -10,4 +10,13 @@ export default defineConfig({
       "same-runtime/dist/jsx-runtime",
     ],
   },
+  build: {
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name].[ext]'
+      }
+    }
+  },
+  publicDir: 'public'
 });

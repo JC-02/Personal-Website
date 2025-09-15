@@ -1,5 +1,6 @@
 import type React from 'react';
 import { useEffect, useState } from 'react';
+import headshotImage from '/portfolio-headshot.jpeg';
 
 const HeroSection: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -36,7 +37,7 @@ const HeroSection: React.FC = () => {
               {/* Main image container with improved styling */}
               <div className="relative bg-white/15 backdrop-blur-md border border-white/30 rounded-xl p-3 shadow-2xl hover:bg-white/20 hover:border-white/40 hover:shadow-white/10 hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02]">
                 <img
-                  src="/portfolio-headshot.jpeg"
+                  src={headshotImage}
                   alt="Jordan Cowan - Software Engineer and AI Enthusiast"
                   className="w-64 h-64 md:w-80 md:h-80 lg:w-84 lg:h-84 object-cover rounded-lg shadow-lg"
                   loading="eager"

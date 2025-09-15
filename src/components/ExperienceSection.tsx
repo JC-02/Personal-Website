@@ -1,5 +1,6 @@
 import type React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import uvicLogo from '/university-of-victoria-logo.png';
 
 const ExperienceSection: React.FC = () => {
   const { ref: aboutRef, isVisible: aboutVisible } = useScrollAnimation(0.1);
@@ -38,7 +39,7 @@ const ExperienceSection: React.FC = () => {
                   <h5 className="text-white font-bold text-lg">University of Victoria (2020-2025)</h5>
                   <div className="absolute top-1/2 right-6 transform -translate-y-1/2">
                     <img 
-                      src="/university-of-victoria-logo.png"
+                      src={uvicLogo}
                       alt="University of Victoria Logo"
                       className="w-40 h-40 object-contain"
                     />
