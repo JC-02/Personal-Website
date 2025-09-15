@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   update-dependencies:
-    name: Dependency Updates
+    name: Update Dependencies
     runs-on: ubuntu-latest
     
     steps:
