@@ -175,7 +175,7 @@ const ParticleBackground: React.FC = () => {
 
     // Enhanced web-like connection system
     const maxTotalConnections = Math.floor(particles.length * 0.8); // Increased to 80% for more web-like density
-    const maxMouseConnections = isMobile ? 15 : 25; // Connections to mouse
+    const maxMouseConnections = 12; // Maximum of 12 nodes connected to mouse
     let totalConnections = 0;
     let mouseConnections = 0;
 
@@ -183,12 +183,22 @@ const ParticleBackground: React.FC = () => {
     if (mouseRef.current.isActive && 
         Number.isFinite(mouseRef.current.x) && 
         Number.isFinite(mouseRef.current.y)) {
-      for (let i = 0; i < particles.length && mouseConnections < maxMouseConnections && totalConnections < maxTotalConnections; i++) {
-        const particle = particles[i];
+      
+      // Create array of particles with their distances to mouse for sorting
+      const particlesWithDistance = particles.map((particle, index) => {
         const dx = mouseRef.current.x - particle.x;
         const dy = mouseRef.current.y - particle.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
-
+        return { particle, distance, index };
+      });
+      
+      // Sort by distance to prioritize closest particles
+      particlesWithDistance.sort((a, b) => a.distance - b.distance);
+      
+      // Connect to the closest particles up to the maximum limit
+      for (const { particle, distance } of particlesWithDistance) {
+        if (mouseConnections >= maxMouseConnections || totalConnections >= maxTotalConnections) break;
+        
         if (distance < CONNECTION_DISTANCE * 0.8) { // Slightly smaller range for mouse connections
           // Draw connection to mouse position (invisible endpoint)
           ctx.beginPath();
@@ -428,7 +438,7 @@ const ParticleBackground: React.FC = () => {
       className="fixed top-0 left-0 w-full h-full -z-10"
       data-particle-canvas="true"
       style={{
-        background: 'linear-gradient(180deg, #0a0a14 0%, #1e1e3f 30%, #2a2a5f 60%, #3d3d7f 100%)',
+        background: 'linear-gradient(180deg, #080810 0%, #1a1a35 30%, #252550 60%, #353570 100%)',
         pointerEvents: 'auto'
       }}
     />

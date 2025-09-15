@@ -189,13 +189,15 @@ const ContactForm: React.FC = () => {
           )}
         </div>
 
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="w-full md:w-auto px-8 py-3 bg-white text-black font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none shadow-lg"
-        >
-          {isSubmitting ? 'Sending...' : 'Send Message'}
-        </button>
+        <div className="flex justify-center">
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="px-8 py-3 bg-white text-black font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none shadow-lg"
+          >
+            {isSubmitting ? 'Sending...' : 'Send Message'}
+          </button>
+        </div>
 
         {submitStatus === 'success' && (
           <div className="p-4 bg-green-500/20 backdrop-blur-sm border border-green-500/50 shadow-lg">
