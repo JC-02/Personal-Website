@@ -1,0 +1,73 @@
+name: Dependency Updates
+
+on:
+  # Run weekly on Mondays at 9 AM UTC
+  schedule:
+    - cron: '0 9 * * 1'
+  # Allow manual triggering
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-dependencies:
+    name: Update Dependencies
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install Dependencies
+        run: npm ci
+        
+      - name: Check for Updates
+        id: check-updates
+        run: |
+          echo "Checking for dependency updates..."
+          if npx npm-check-updates --doctor --test; then
+            echo "All dependencies are up to date!"
+            echo "has-updates=false" >> $GITHUB_OUTPUT
+          else
+            echo "Updates available!"
+            echo "has-updates=true" >> $GITHUB_OUTPUT
+          fi
+        continue-on-error: true
+        
+      - name: Generate Update Report
+        if: steps.check-updates.outputs.has-updates == 'true'
+        run: |
+          echo "Generating dependency update report..."
+          npx npm-check-updates --format group > update-report.txt
+          echo "## Available Dependency Updates" > update-summary.md
+          echo "" >> update-summary.md
+          echo "\`\`\`" >> update-summary.md
+          cat update-report.txt >> update-summary.md
+          echo "\`\`\`" >> update-summary.md
+          echo "" >> update-summary.md
+          echo "This is an automated report. Please review changes carefully before merging." >> update-summary.md
+          
+      - name: Suggest Action
+        if: steps.check-updates.outputs.has-updates == 'true'
+        run: |
+          echo "To update dependencies manually:"
+          echo "1. Run: npx npm-check-updates --interactive"
+          echo "2. Review and select updates"
+          echo "3. Run: npm install"
+          echo "4. Test thoroughly"
+          echo "5. Commit changes"
+          
+      - name: Security Audit
+        run: |
+          echo "Running security audit..."
+          npm audit --audit-level=moderate || echo "Security vulnerabilities found - please review"
