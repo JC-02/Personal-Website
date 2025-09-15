@@ -1,6 +1,6 @@
 import type React from 'react';
 import { useEffect, useState } from 'react';
-import headshotImage from '/portfolio-headshot.jpeg';
+import headshotImage from '../assets/portfolio-headshot.jpeg';
 
 const HeroSection: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);

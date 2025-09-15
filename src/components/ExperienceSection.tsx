@@ -1,6 +1,6 @@
 import type React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import uvicLogo from '/university-of-victoria-logo.png';
+import uvicLogo from '../assets/university-of-victoria-logo.png';
 
 const ExperienceSection: React.FC = () => {
   const { ref: aboutRef, isVisible: aboutVisible } = useScrollAnimation(0.1);
