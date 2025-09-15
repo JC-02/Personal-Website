@@ -3,7 +3,7 @@
 [![CI/CD Pipeline](https://github.com/JC-02/Personal-Website/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/JC-02/Personal-Website/actions/workflows/ci-cd.yml)
 [![Dependency Updates](https://github.com/JC-02/Personal-Website/actions/workflows/dependencies.yml/badge.svg)](https://github.com/JC-02/Personal-Website/actions/workflows/dependencies.yml)
 
-## Hello there
+## Hello!
 
 My name is **Jordan Cowan**, and I'm a Software Engineer currently living in Victoria, BC, Canada. Welcome to the repository for my personal website and portfolio!
 
