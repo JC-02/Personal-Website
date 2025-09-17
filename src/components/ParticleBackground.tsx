@@ -82,21 +82,6 @@ const ParticleBackground: React.FC = () => {
     ctx.fill();
   }, []);
 
-  const drawConnection = useCallback((
-    ctx: CanvasRenderingContext2D,
-    p1: Particle,
-    p2: Particle,
-    distance: number
-  ) => {
-    const opacity = Math.max(0, 1 - distance / CONNECTION_DISTANCE);
-    ctx.beginPath();
-    ctx.moveTo(p1.x, p1.y);
-    ctx.lineTo(p2.x, p2.y);
-    ctx.strokeStyle = `rgba(255, 255, 255, ${opacity * (isMobile ? 0.3 : 0.4)})`;
-    ctx.lineWidth = isMobile ? 0.6 : 0.8;
-    ctx.stroke();
-  }, [CONNECTION_DISTANCE, isMobile]);
-
   const updateParticle = useCallback((particle: Particle, width: number, height: number) => {
     // Validate inputs
     if (!Number.isFinite(particle.x) || !Number.isFinite(particle.y) || !Number.isFinite(particle.vx) || !Number.isFinite(particle.vy)) {
@@ -255,122 +240,13 @@ const ParticleBackground: React.FC = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const BUFFER_ZONE = 8; // 8px buffer around content elements and window borders
-
-    // Check if mouse is near window borders (within 8px)
-    if (event.clientX < BUFFER_ZONE || event.clientY < BUFFER_ZONE || 
-        event.clientX > window.innerWidth - BUFFER_ZONE || 
-        event.clientY > window.innerHeight - BUFFER_ZONE) {
-      mouseRef.current.isActive = false;
-      return;
-    }
-
     const rect = canvas.getBoundingClientRect();
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
-    
-    // Update position
+
     mouseRef.current.x = x;
     mouseRef.current.y = y;
-
-    // Check what element is actually under the cursor
-    const elementUnderCursor = document.elementFromPoint(event.clientX, event.clientY);
-    
-    if (!elementUnderCursor) {
-      mouseRef.current.isActive = false;
-      return;
-    }
-
-    // Simplified approach: check for specific content containers with buffer zones
-    const isNearContentElement = () => {
-      // Only check for key content containers that actually have visible content
-      const contentContainers = [
-        '.container',           // Main content containers
-        '.bg-white',           // White blocks (JORDAN)
-        '.bg-black',           // Black blocks (COWAN)
-        '.bg-white\\/5'        // Semi-transparent content cards
-      ];
-
-      for (const selector of contentContainers) {
-        try {
-          const elements = document.querySelectorAll(selector);
-          
-          for (const element of elements) {
-            const elementRect = element.getBoundingClientRect();
-            
-            // Skip elements that are not visible in viewport
-            if (elementRect.width === 0 || elementRect.height === 0) continue;
-            if (elementRect.bottom < 0 || elementRect.top > window.innerHeight) continue;
-            if (elementRect.right < 0 || elementRect.left > window.innerWidth) continue;
-            
-            // Check if mouse is within buffer zone of this element
-            const isNearElement = (
-              event.clientX >= elementRect.left - BUFFER_ZONE &&
-              event.clientX <= elementRect.right + BUFFER_ZONE &&
-              event.clientY >= elementRect.top - BUFFER_ZONE &&
-              event.clientY <= elementRect.bottom + BUFFER_ZONE
-            );
-            
-            if (isNearElement) {
-              return true;
-            }
-          }
-        } catch (e) {
-          // Element detection failed, skip this particle
-        }
-      }
-      
-      return false;
-    };
-
-    // Check if cursor is over background/canvas areas
-    const isOverBackground = (
-      elementUnderCursor === canvas || 
-      elementUnderCursor === document.body ||
-      elementUnderCursor.tagName === 'HTML' ||
-      elementUnderCursor.className?.includes('min-h-screen') || // Section backgrounds
-      !elementUnderCursor.className || // Elements without classes (likely background)
-      elementUnderCursor.tagName === 'MAIN' ||
-      elementUnderCursor.tagName === 'DIV' && !elementUnderCursor.className
-    );
-
-    // Check if cursor is directly over content elements
-    const isOverContent = (
-      // Direct element checks
-      elementUnderCursor !== canvas &&
-      elementUnderCursor !== document.body &&
-      elementUnderCursor.tagName !== 'HTML' &&
-      elementUnderCursor.tagName !== 'MAIN' &&
-      // Check for specific content indicators
-      (elementUnderCursor.tagName === 'H1' ||
-       elementUnderCursor.tagName === 'H2' ||
-       elementUnderCursor.tagName === 'H3' ||
-       elementUnderCursor.tagName === 'P' ||
-       elementUnderCursor.tagName === 'SPAN' ||
-       elementUnderCursor.tagName === 'A' ||
-       elementUnderCursor.tagName === 'BUTTON' ||
-       elementUnderCursor.tagName === 'DIV' && elementUnderCursor.className && (
-         elementUnderCursor.className.includes('bg-white') ||
-         elementUnderCursor.className.includes('bg-black') ||
-         elementUnderCursor.className.includes('bg-white/5') ||
-         elementUnderCursor.className.includes('bg-white/10') ||
-         elementUnderCursor.className.includes('container') ||
-         elementUnderCursor.className.includes('border-') ||
-         elementUnderCursor.className.includes('px-') ||
-         elementUnderCursor.className.includes('py-') ||
-         elementUnderCursor.className.includes('p-') ||
-         elementUnderCursor.className.includes('backdrop-blur')
-       ) ||
-       elementUnderCursor.tagName === 'NAV' ||
-       elementUnderCursor.closest('nav') ||
-       elementUnderCursor.closest('.container') ||
-       elementUnderCursor.closest('[class*="bg-white"]') ||
-       elementUnderCursor.closest('[class*="bg-black"]'))
-    );
-
-    // Only activate if within canvas bounds AND not over content
-    const isWithinCanvas = x >= 0 && x <= canvas.width && y >= 0 && y <= canvas.height;
-    mouseRef.current.isActive = isWithinCanvas && !isOverContent;
+    mouseRef.current.isActive = event.target === canvas;
   }, []);
 
   const handleMouseLeave = useCallback(() => {
@@ -439,7 +315,6 @@ const ParticleBackground: React.FC = () => {
       data-particle-canvas="true"
       style={{
         background: 'linear-gradient(180deg, #080810 0%, #1a1a35 30%, #252550 60%, #353570 100%)',
-        pointerEvents: 'auto'
       }}
     />
   );

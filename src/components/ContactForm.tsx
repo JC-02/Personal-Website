@@ -1,6 +1,14 @@
 import type React from 'react';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
+
+// Initialize EmailJS once
+const emailJsPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+if (emailJsPublicKey) {
+  emailjs.init({
+    publicKey: emailJsPublicKey,
+  });
+}
 
 interface FormData {
   name: string;
@@ -23,16 +31,6 @@ const ContactForm: React.FC = () => {
     organization: '',
     message: '',
   });
-
-  // Initialize EmailJS
-  useEffect(() => {
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-    if (publicKey) {
-      emailjs.init({
-        publicKey: publicKey,
-      });
-    }
-  }, []);
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -124,7 +122,6 @@ const ContactForm: React.FC = () => {
                 errors.name ? 'border-red-400' : ''
               }`}
               placeholder="Your name"
-              required
             />
             {errors.name && (
               <p className="mt-1 text-red-400 text-sm">{errors.name}</p>
@@ -145,7 +142,6 @@ const ContactForm: React.FC = () => {
                 errors.email ? 'border-red-400' : ''
               }`}
               placeholder="your@email.com"
-              required
             />
             {errors.email && (
               <p className="mt-1 text-red-400 text-sm">{errors.email}</p>
@@ -182,7 +178,6 @@ const ContactForm: React.FC = () => {
               errors.message ? 'border-red-400' : ''
             }`}
             placeholder="What's on your mind? Share your thoughts, ideas, or just say hello..."
-            required
           />
           {errors.message && (
             <p className="mt-1 text-red-400 text-sm">{errors.message}</p>

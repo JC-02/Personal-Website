@@ -53,11 +53,6 @@ const HeroSection: React.FC = () => {
               Jordan Cowan
             </h1>
             
-            {/* Title - Clear hierarchy with responsive sizing
-            <h2 className="text-gray-100 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-wide">
-              Software Engineer
-            </h2> */}
-            
             {/* Concise, professional introduction */}
             <p className="text-gray-200 text-lg sm:text-xl md:text-2xl font-medium max-w-2xl leading-relaxed">
               Software Engineer based in Victoria, BC.
