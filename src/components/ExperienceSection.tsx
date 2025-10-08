@@ -36,7 +36,8 @@ const ExperienceSection: React.FC = () => {
               <h4 className="text-white text-xl font-semibold mb-4">Education</h4>
               <div className="bg-white/10 backdrop-blur-md p-6 border border-white/20 shadow-lg relative">
                 <div className="mb-4">
-                  <h5 className="text-white font-bold text-lg">University of Victoria (2020-2025)</h5>
+                  <h5 className="text-white font-bold text-lg">Bachelor of Software Engineering (BSEng)</h5>
+                  <p className="text-blue-300 font-semibold">University of Victoria • Victoria, BC</p>
                   <div className="absolute top-1/2 right-6 transform -translate-y-1/2">
                     <img 
                       src={uvicLogo}
@@ -45,10 +46,10 @@ const ExperienceSection: React.FC = () => {
                     />
                   </div>
                 </div>
-                <p className="text-gray-300 mb-4 font-normal text-lg max-w-none">Bachelor of Software Engineering (BSEng)</p>
                 <ul className="ml-6 space-y-2 text-gray-300 font-normal max-w-none">
-                  <li>• Specialization in Data Mining, Analysis, AI, and Machine Learning</li>
-                  <li>• Specialization in Visual Computing and Graphics</li>
+                  <li> • Specialization in Data Mining, Analysis, AI, and Machine Learning</li>
+                  <li> • Specialization in Visual Computing and Graphics</li>
+                  <li> • Engineering Co-Op Program</li>
                 </ul>
               </div>
             </div>
@@ -66,13 +67,13 @@ const ExperienceSection: React.FC = () => {
                     <p className="text-blue-300 font-semibold">District of Saanich • Aug 2018 – Present • Victoria, BC</p>
                   </div>
                   <ul className="ml-6 space-y-2 text-gray-300 font-normal">
-                    <li>• Coordinated logistics for recreational and cultural programs, including facility bookings, equipment rentals, and event setup/takedown</li>
-                    <li>• Planned and delivered safe, engaging community activities with consistently positive participant feedback</li>
-                    <li>• Promoted inclusivity, accessibility, and respectful participation across programs</li>
-                    <li>• Managed program supplies and inventory while ensuring cost-effective procurement</li>
-                    <li>• Liaised with vendors and service providers to streamline event execution</li>
-                    <li>• Assisted with scheduling, staffing, and volunteer coordination for large-scale community events</li>
-                    <li>• Monitored program operations, tracked attendance, and reported on performance outcomes</li>
+                    <li> • Coordinated logistics for recreational and cultural programs, including facility bookings, equipment rentals, and event setup/takedown</li>
+                    <li> • Planned and delivered safe, engaging community activities with consistently positive participant feedback</li>
+                    <li> • Promoted inclusivity, accessibility, and respectful participation across programs</li>
+                    <li> • Managed program supplies and inventory while ensuring cost-effective procurement</li>
+                    <li> • Liaised with vendors and service providers to streamline event execution</li>
+                    <li> • Assisted with scheduling, staffing, and volunteer coordination for large-scale community events</li>
+                    <li> • Monitored program operations, tracked attendance, and reported on performance outcomes</li>
                   </ul>
                 </div>
 
@@ -82,13 +83,13 @@ const ExperienceSection: React.FC = () => {
                     <p className="text-blue-300 font-semibold">Workday • May – Dec 2023 • Vancouver, BC</p>
                   </div>
                   <ul className="ml-6 space-y-2 text-gray-300 font-normal">
-                    <li>• Designed and developed customer-facing features using XpressO within an object-oriented framework</li>
-                    <li>• Implemented unit tests, debugged issues, and supported end-to-end defect resolution</li>
-                    <li>• Collaborated in Agile sprints with cross-functional teams to refine requirements and deliver features</li>
-                    <li>• Contributed to DevOps pipeline and CI/CD processes, ensuring consistent deployments</li>
-                    <li>• Performed code reviews and maintained development standards across environments</li>
-                    <li>• Applied XML-based data integration and UML-driven approaches to optimize system scalability</li>
-                    <li>• Coordinated and presented at an Intern Expo for 200+ interns globally</li>
+                    <li> • Designed and developed customer-facing features using XpressO within an object-oriented framework</li>
+                    <li> • Implemented unit tests, debugged issues, and supported end-to-end defect resolution</li>
+                    <li> • Collaborated in Agile sprints with cross-functional teams to refine requirements and deliver features</li>
+                    <li> • Contributed to DevOps pipeline and CI/CD processes, ensuring consistent deployments</li>
+                    <li> • Performed code reviews and maintained development standards across environments</li>
+                    <li> • Applied XML-based data integration and UML-driven approaches to optimize system scalability</li>
+                    <li> • Coordinated and presented at an Intern Expo for 200+ interns globally</li>
                   </ul>
                 </div>
 
@@ -98,9 +99,9 @@ const ExperienceSection: React.FC = () => {
                     <p className="text-blue-300 font-semibold">Science Venture (University of Victoria) • Jan – Apr 2022 • Victoria, BC</p>
                   </div>
                   <ul className="ml-6 space-y-2 text-gray-300 font-normal">
-                    <li>• Designed STEM and digital literacy workshops for participants ages 5–60</li>
-                    <li>• Delivered hands-on training sessions, adapting material for diverse learner groups</li>
-                    <li>• Contributed to frontend web development for the program's registration platform</li>
+                    <li> • Designed STEM and digital literacy workshops for participants ages 5–60</li>
+                    <li> • Delivered hands-on training sessions, adapting material for diverse learner groups</li>
+                    <li> • Contributed to frontend web development for the program's registration platform</li>
                   </ul>
                 </div>
 
@@ -110,12 +111,12 @@ const ExperienceSection: React.FC = () => {
                     <p className="text-blue-300 font-semibold">Northworks IP • May – Aug 2021 • Victoria, BC</p>
                   </div>
                   <ul className="ml-6 space-y-2 text-gray-300 font-normal">
-                    <li>• Drafted and analyzed software architectures and component interactions, with focus on EV charging and music streaming platforms</li>
-                    <li>• Conducted market and technical research in the EV charging ecosystem to identify gaps and opportunities</li>
-                    <li>• Performed patent landscaping, data analysis, and created technical search scopes and reports</li>
-                    <li>• Prepared client-facing recommendations on applying AI modeling to EV infrastructures</li>
-                    <li>• Delivered presentations and technical reports to leadership teams for decision-making</li>
-                    <li>• Co-inventor on published U.S. patent <a href="https://patents.google.com/patent/US20250033517A1" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline transition-colors">"Electric Vehicle Fleet Charging and Energy Management System"</a> (US20250033517A1)</li>
+                    <li> • Drafted and analyzed software architectures and component interactions, with focus on EV charging and music streaming platforms</li>
+                    <li> • Conducted market and technical research in the EV charging ecosystem to identify gaps and opportunities</li>
+                    <li> • Performed patent landscaping, data analysis, and created technical search scopes and reports</li>
+                    <li> • Prepared client-facing recommendations on applying AI modeling to EV infrastructures</li>
+                    <li> • Delivered presentations and technical reports to leadership teams for decision-making</li>
+                    <li> • Co-inventor on published U.S. patent <a href="https://patents.google.com/patent/US20250033517A1" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline transition-colors">"Electric Vehicle Fleet Charging and Energy Management System"</a> (US20250033517A1)</li>
                   </ul>
                 </div>
               </div>
@@ -131,41 +132,41 @@ const ExperienceSection: React.FC = () => {
                 <div className="bg-white/10 backdrop-blur-md p-6 border border-white/20 shadow-lg">
                   <h5 className="text-white font-semibold mb-3 text-lg">Languages</h5>
                   <ul className="space-y-1 text-gray-300 font-normal">
-                    <li>• Java, Python, C/C++</li>
-                    <li>• C# / .NET, XpressO</li>
-                    <li>• JavaScript / TypeScript</li>
-                    <li>• HTML / CSS, XML/UML</li>
-                    <li>• SQL (PostgreSQL)</li>
+                    <li> • Java, Python, C/C++</li>
+                    <li> • C# / .NET, XpressO</li>
+                    <li> • JavaScript / TypeScript</li>
+                    <li> • HTML / CSS, XML/UML</li>
+                    <li> • SQL (PostgreSQL)</li>
                   </ul>
                 </div>
                 <div className="bg-white/10 backdrop-blur-md p-6 border border-white/20 shadow-lg">
                   <h5 className="text-white font-semibold mb-3 text-lg">Architecture & Design</h5>
                   <ul className="space-y-1 text-gray-300 font-normal">
-                    <li>• Systems Design & API Design (RESTful, service layers)</li>
-                    <li>• Database Architecture (PostgreSQL, relational design)</li>
-                    <li>• CI/CD Pipeline Integration (multi-environment DevOps)</li>
-                    <li>• Cloud Integration (Azure, AWS, Google Cloud)</li>
-                    <li>• Machine Learning (AI/ML workflows, data mining, analysis)</li>
+                    <li> • Systems Design & API Design (RESTful, service layers)</li>
+                    <li> • Database Architecture (PostgreSQL, relational design)</li>
+                    <li> • CI/CD Pipeline Integration (multi-environment DevOps)</li>
+                    <li> • Cloud Integration (Azure, AWS, Google Cloud)</li>
+                    <li> • Machine Learning (AI/ML workflows, data mining, analysis)</li>
                   </ul>
                 </div>
                 <div className="bg-white/10 backdrop-blur-md p-6 border border-white/20 shadow-lg">
                   <h5 className="text-white font-semibold mb-3 text-lg">Tools & Technologies</h5>
                   <ul className="space-y-1 text-gray-300 font-normal">
-                    <li>• Development: Git, Docker, VS Code, IntelliJ, Eclipse</li>
-                    <li>• CI/CD: GitHub, Docker pipelines, multi-environment deployment</li>
-                    <li>• Systems: Linux/Unix Environments</li>
-                    <li>• Testing: JUnit, Maven, test automation, code review</li>
-                    <li>• Analysis: Patent Landscaping Tools, technical data analysis</li>
+                    <li> • Development: Git, Docker, VS Code, IntelliJ, Eclipse</li>
+                    <li> • CI/CD: GitHub, Docker, Azure</li>
+                    <li> • Systems: Windows, MacOS, Linux/Unix</li>
+                    <li> • Testing: JUnit, Maven, Selenium, Jest, Cucumber</li>
+                    <li> • Analysis: Patent Landscaping Tools, technical data analysis</li>
                   </ul>
                 </div>
                 <div className="bg-white/10 backdrop-blur-md p-6 border border-white/20 shadow-lg">
                   <h5 className="text-white font-semibold mb-3 text-lg">Frameworks</h5>
                   <ul className="space-y-1 text-gray-300 font-normal">
-                    <li>• Frontend: React, Vue, HTML/CSS/JS stacks</li>
-                    <li>• Backend: .NET Core, Spring Boot, Django REST</li>
-                    <li>• Web: Node.js, Flask, Django, Spring</li>
-                    <li>• Data/ML: PyTorch</li>
-                    <li>• Build: Maven</li>
+                    <li> • Frontend: React, Vue, HTML/CSS/JS stacks</li>
+                    <li> • Backend: .NET Core, Spring Boot, Django REST, Flask</li>
+                    <li> • Web: Node.js, Flask, Django, Spring</li>
+                    <li> • Data/ML: PyTorch, TensorFlow</li>
+                    <li> • Build: Maven, Gradle</li>
                   </ul>
                 </div>
               </div>
