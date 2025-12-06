@@ -7,18 +7,18 @@ const ProjectsSection: React.FC = () => {
   const projects = [
     {
       title: 'Astrolabe',
-      tech: 'TypeScript, C#, .NET, Docker, PostgreSQL',
+      tech: 'C# (.NET), TypeScript (Next.js), PostgreSQL, ChromaDB, Docker, Digital Ocean, Google Gemini, MSTest',
       description: 'A full-stack web application designed act as a chatbot that helps users explore and visualize data from Ocean Network Canada\'s data collection. Uses an intuitive new approach to conversations, a unique node-based system. Built using React and ASP.NET, with the full implemenation of a custom RAG (Retrieval-Augmented Generation) pipeline architecture for enhanced AI responses using open source models via Ollama.',
       link: '#',
       github: 'https://github.com/seng499-bratwurst'
     },
     {
-      title: 'Coming Soon: AtlasAI',
-      tech: 'C++, OpenGL, GLSL',
-      description: 'Currently in development: A personal passion project where I am designing a model that helps users navigate the exponentially-scaling world of AI-powered tools and models. With so many resources available some people find it difficult to find the right tools for the job. AtlasAI is designed to be that guide, helping users find the best AI tools for their specific purpose that they can use effectively.',
+      title: 'Coming Soon: Atlas -- Multi-Model Interview Intelligence',
+      tech: 'Python (FastAPI), TypeScript (Next.js), PostgreSQL, Docker, Redis, Celery, MediaPipe, Whisper',
+      description: 'Currently in development: Atlas is an intelligent career coach designed to help job seekers master their interview preparation. It uses local AI models to analyze your resume and provide tailored feedback for specific job applications. The platform also runs practice video sessions that evaluate your speech patterns and body language. By processing video and audio entirely within self-hosted infrastructure, it ensures your personal data stays private while delivering the deep insights you need to interview with confidence.',
       link: '#',
-      github: 'https://github.com/JC-02',
-      jira: 'https://jordancowan.atlassian.net/jira/software/projects/ATLAS/boards/36?atlOrigin=eyJpIjoiMDNjMmM5MmFlZWU3NDA2NTljNzBkMWY4ZmNlOTBhOTgiLCJwIjoiaiJ9',
+      github: 'https://github.com/JC-02/Atlas',
+      jira: 'https://jordancowan.atlassian.net/jira/software/projects/ASCEND/summary',
       wip: true
     },
     {

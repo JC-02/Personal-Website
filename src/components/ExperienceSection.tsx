@@ -47,9 +47,10 @@ const ExperienceSection: React.FC = () => {
                   </div>
                 </div>
                 <ul className="ml-6 space-y-2 text-gray-300 font-normal max-w-none">
+                  <li> • Engineering Co-Operative Education Program</li>
                   <li> • Specialization in Data Mining, Analysis, AI, and Machine Learning</li>
                   <li> • Specialization in Visual Computing and Graphics</li>
-                  <li> • Engineering Co-Op Program</li>
+                  <li> • Varsity Student-Athlete (Swimming)</li>
                 </ul>
               </div>
             </div>
@@ -132,11 +133,11 @@ const ExperienceSection: React.FC = () => {
                 <div className="bg-white/10 backdrop-blur-md p-6 border border-white/20 shadow-lg">
                   <h5 className="text-white font-semibold mb-3 text-lg">Languages</h5>
                   <ul className="space-y-1 text-gray-300 font-normal">
-                    <li> • Java, Python, C/C++</li>
-                    <li> • C# / .NET, XpressO</li>
-                    <li> • JavaScript / TypeScript</li>
-                    <li> • HTML / CSS, XML/UML</li>
+                    <li> • Java, Python, C#, C</li>
+                    <li> • TypeScript, JavaScript</li>
                     <li> • SQL (PostgreSQL)</li>
+                    <li> • HTML / CSS</li>
+                    <li> • XML, XpressO</li>
                   </ul>
                 </div>
                 <div className="bg-white/10 backdrop-blur-md p-6 border border-white/20 shadow-lg">
@@ -145,28 +146,28 @@ const ExperienceSection: React.FC = () => {
                     <li> • Systems Design & API Design (RESTful, service layers)</li>
                     <li> • Database Architecture (PostgreSQL, relational design)</li>
                     <li> • CI/CD Pipeline Integration (multi-environment DevOps)</li>
-                    <li> • Cloud Integration (Azure, AWS, Google Cloud)</li>
-                    <li> • Machine Learning (AI/ML workflows, data mining, analysis)</li>
+                    <li> • Cloud Integration (Azure, Google Cloud)</li>
+                    <li> • Machine Learning (AI/ML workflows, RAG pipelines)</li>
                   </ul>
                 </div>
                 <div className="bg-white/10 backdrop-blur-md p-6 border border-white/20 shadow-lg">
                   <h5 className="text-white font-semibold mb-3 text-lg">Tools & Technologies</h5>
                   <ul className="space-y-1 text-gray-300 font-normal">
-                    <li> • Development: Git, Docker, VS Code, IntelliJ, Eclipse</li>
-                    <li> • CI/CD: GitHub, Docker, Azure</li>
-                    <li> • Systems: Windows, MacOS, Linux/Unix</li>
-                    <li> • Testing: JUnit, Maven, Selenium, Jest, Cucumber</li>
-                    <li> • Analysis: Patent Landscaping Tools, technical data analysis</li>
+                    <li> • Git, Docker, GitHub Workflows, MinIO</li>
+                    <li> • Vercel, DigitalOcean, Postman, Swagger/OpenAPI</li>
+                    <li> • JUnit, MSTest, Selenium, Jest</li>
+                    <li> • VS Code, IntelliJ, Eclipse</li>
+                    <li> • Linux/Unix, Windows, MacOS</li>
                   </ul>
                 </div>
                 <div className="bg-white/10 backdrop-blur-md p-6 border border-white/20 shadow-lg">
                   <h5 className="text-white font-semibold mb-3 text-lg">Frameworks</h5>
                   <ul className="space-y-1 text-gray-300 font-normal">
-                    <li> • Frontend: React, Vue, HTML/CSS/JS stacks</li>
-                    <li> • Backend: .NET Core, Spring Boot, Django REST, Flask</li>
-                    <li> • Web: Node.js, Flask, Django, Spring</li>
-                    <li> • Data/ML: PyTorch, TensorFlow</li>
-                    <li> • Build: Maven, Gradle</li>
+                    <li> • React, Next.js, Node.js, Tailwind CSS</li>
+                    <li> • FastAPI, .NET, Spring Boot, SQLAlchemy</li>
+                    <li> • PyTorch, OpenCV, MediaPipe, Whisper</li>
+                    <li> • LangChain, ChromaDB, pgvector, Pandas</li>
+                    <li> • Redis, Celery, Pydantic</li>
                   </ul>
                 </div>
               </div>
