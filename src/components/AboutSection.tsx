@@ -30,7 +30,7 @@ const AboutSection: React.FC = () => {
         }`}>
           <div className="bg-white/10 backdrop-blur-md p-8 border border-white/20 shadow-lg">
             <p className="text-gray-300 leading-relaxed mb-6 font-normal text-lg max-w-none">
-              Hello! My name is Jordan Cowan, I am a Software Engineer living and working in Victoria, British Columbia.
+              Hello! My name is Jordan, I am a Software Engineer living and working in Victoria, British Columbia.
             </p>
             <p className="text-gray-300 leading-relaxed mb-6 font-normal text-lg max-w-none">
               I love tackling tough problems and turning them into something useful and easy to use. Whether I'm working on embedded systems, building full-stack applications, or creating machine learning models, I want to create software that people can actually use in a practical way. There's something really satisfying about taking a complex challenge and making it simple.
